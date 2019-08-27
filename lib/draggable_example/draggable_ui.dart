@@ -28,7 +28,7 @@ class _DraggableUIState extends State<DraggableUI> {
                       return Center(
                         child: Draggable(
                           
-                          data: 6,
+                          data: 7,
                           onDragCompleted: () {
                             print("object");
                             draggableProvider.remove(i);
