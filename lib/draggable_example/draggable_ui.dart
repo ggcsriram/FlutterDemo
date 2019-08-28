@@ -49,25 +49,20 @@ class _DraggableUIState extends State<DraggableUI> {
                     return Center(child: Container(child: Text("No data")));
                   })
                 ],
-              ),
-              Container(
-                color: Colors.red,
-                height: 100,
-                width: 100,
-                child: DragTarget(
-                  builder: (BuildContext context, List<int> candidateData,
-                      List rejectedData) {
-                    print(candidateData);
-                    return Center(
-                      child: Text("Delete"),
-                    );
-                  },
-                  onWillAccept: (data) {
-                    return true;
-                  },
-                  onAccept: (data) {
-                  },
-                ),
+              ),SizedBox(height: 100,),
+              DragTarget(
+                builder: (BuildContext context, List<int> candidateData,
+                    List rejectedData) {
+                  print(candidateData);
+                  return Center(
+                    child: Icon(Icons.delete),
+                  );
+                },
+                onWillAccept: (data) {
+                  return true;
+                },
+                onAccept: (data) {
+                },
               )
             ],
           ),
@@ -77,25 +72,3 @@ class _DraggableUIState extends State<DraggableUI> {
   }
 }
 
-// class _DraggableUIState extends State<DraggableUI> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Container(
-//         color: Colors.red,
-//         height: 500,
-//         width: 500,
-//         child: Center(
-//           child: Stack(
-//             children: <Widget>[
-//             Draggable(child: Container(height: 100,width: 100,color: Colors.green,), feedback: Container(
-//               height:100,width:100,color:Colors.white
-//             ),),
-//              Container(height: 50,width: 100,color: Colors.black,)
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
