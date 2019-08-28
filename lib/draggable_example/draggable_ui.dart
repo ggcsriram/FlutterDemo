@@ -28,11 +28,11 @@ class _DraggableUIState extends State<DraggableUI> {
                       return Center(
                         child: Draggable(
                           
-                          data: 7,
-                          onDragCompleted: () {
-                            print("object");
-                            draggableProvider.remove(i);
-                          },
+                          data: i,
+                          // onDragCompleted: () {
+                           
+                          //   draggableProvider.remove(i);
+                          // },
                          
                           child: Container(
                             height: 100,
@@ -53,7 +53,7 @@ class _DraggableUIState extends State<DraggableUI> {
               DragTarget(
                 builder: (BuildContext context, List<int> candidateData,
                     List rejectedData) {
-                  print(candidateData);
+                 
                   return Center(
                     child: Icon(Icons.delete),
                   );
@@ -62,6 +62,7 @@ class _DraggableUIState extends State<DraggableUI> {
                   return true;
                 },
                 onAccept: (data) {
+                   draggableProvider.remove(data);
                 },
               )
             ],
