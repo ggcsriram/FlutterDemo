@@ -18,7 +18,7 @@ class CounterProvider extends ChangeNotifier{
 
  incrementCounter1()
  {
-   count1++;
+   count1--;
    notifyListeners();
  } 
 }

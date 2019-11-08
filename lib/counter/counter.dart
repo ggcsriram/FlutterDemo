@@ -22,12 +22,12 @@ class _CounterState extends State<Counter> {
               return Text('$data');
             }, selector: (buildContext , countPro)=>countPro.getCount,
           ),
-           Selector<CounterProvider,int>(
+           Consumer<CounterProvider>(
             
             builder: (context, data,_) {
               print("object123");
-              return Text('$data');
-            }, selector: (buildContext , counterProvider ) =>counterProvider.getCount1,
+              return Text('${data.getCount1}');
+            }, 
           )
         ],
       )),
@@ -44,3 +44,11 @@ class _CounterState extends State<Counter> {
     );
   }
 }
+
+// Selector<CounterProvider,int>(
+            
+//             builder: (context, data,_) {
+//               print("object123");
+//               return Text('$data');
+//             }, selector: (buildContext , counterProvider ) =>counterProvider.getCount1,
+//           )

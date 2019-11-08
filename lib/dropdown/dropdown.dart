@@ -33,11 +33,12 @@ class _DropdownExampleState extends State<DropdownExample> {
               return Text('Waiting');
               //CircularProgressIndicator();
             }
+            else if(snapshot.hasError){
+              print("error");
+                return Center(child: Text(snapshot.error.toString()));
+            }
            else if(snapshot.connectionState== ConnectionState.done){
-             print("done");if(snapshot.hasError){
-               print("has error");
-               return Center(child: Text("Error"));
-             }
+             print("done");
             return Center(
               child:MyDropdown()
             );
