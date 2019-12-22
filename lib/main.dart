@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
          // FloopExample()
         //  TweenAnimation() 
           //StaticListView()
-          //   AnimatedSwitcherExample()
+             AnimatedSwitcherExample()
           //PlaceholderExample()
         //   BottomSheetDialog()
           // DraggableUI()
@@ -85,7 +85,7 @@ class MyApp extends StatelessWidget {
           //  FilePickerExample()
           // AnimationExample()
           // TransformExample()
-           StreamsExample()
+           //StreamsExample()
           ),
     );
   }

@@ -7,36 +7,38 @@ class AnimatedSwitcherExample extends StatefulWidget {
 }
 
 class _AnimatedSwitcherExampleState extends State<AnimatedSwitcherExample> {
- static var smallContainer = Container(
+  static var smallContainer = Container(
+    key: UniqueKey(),
     height: 10,
     width: 10,
     color: Colors.blue,
   );
   static var bigContainer = Container(
+    key: UniqueKey(),
     height: 100,
     width: 100,
     color: Colors.red,
   );
- var child = bigContainer;
+  var child = bigContainer;
   @override
   Widget build(BuildContext context) {
-  
-   
     return Scaffold(
       body: AnimatedSwitcher(
-        child:  Center(child: child),
-     
-        duration: Duration(seconds: 5),
+        transitionBuilder: (Widget child, Animation animation) {
+          return ScaleTransition(
+            child: Center(child: child),
+            scale: animation,
+          );
+        },
+        child: child,
+        duration: Duration(seconds: 1),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          setState(()=> 
-            child =  (child==bigContainer)?smallContainer:bigContainer
-          );
+          setState(() =>
+              child = (child == bigContainer) ? smallContainer : bigContainer);
         },
       ),
     );
-      
   }
-  
 }
