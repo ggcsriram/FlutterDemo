@@ -9,11 +9,15 @@ class _StaticListViewState extends State<StaticListView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView.builder(itemBuilder: (BuildContext context, int index) {
-        return Card(
-          child:Text('$index')
-        );
-      },),
+      body: Scrollbar(
+              child: ListView.builder(itemCount: 1000,
+        itemBuilder: (BuildContext context, int index) {
+          print(index);
+          return Card(
+            child:Text('$index')
+          );
+        },),
+      ),
     );
   }
 }
